@@ -1,11 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>RPG</title>
-    <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
+    <script src="/html/table.js"></script>
+    <script defer src="/html/paging.js"></script>
     <link href="/css/my.css" rel="stylesheet">
 </head>
 <body>
 <h1>RPG admin panel</h1>
-
+<select id="sl" onchange="initOrChangeTable(this)"></select>
+<table id="styled-table"></table>
+<div id="buttons"></div>
+<div class="newAccountCreation">
+    <div class="divField">Name: <input maxlength="12" class="accInputField" id="nameInput"></div>
+    <div class="divField">Title: <input maxlength="30" class="accInputField" id="titleInput"></div>
+    <div class="divField">Race: <select class="accSelectField" id="raceInput"></select></div>
+    <div class="divField">Profession: <select class="accSelectField" id="professionInput"></select></div>
+    <div class="divField">Level: <input type="number" name="num" min="1" max="100" class="accInputField" id="levelInput"></div>
+    <div class="divField">Birthday: <input type="date" class="accInputField" id="birthdayInput"></div>
+    <div class="divField">Banned: <select class="accSelectField" id="bannedInput"></select></div>
+    <button id="saveAccButton" onclick="saveButtonClickEvent()">Save</button>
+</div>
 </body>
 </html>
